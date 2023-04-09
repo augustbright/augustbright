@@ -10,7 +10,6 @@ FROM node:18.15.0-alpine AS builder
 WORKDIR /app
 COPY . .
 ADD app ./app
-ADD public ./public
 COPY --from=dependencies /app/node_modules ./node_modules
 RUN npm run build
 
