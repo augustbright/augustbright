@@ -5,9 +5,9 @@ import { SanityCode } from "../sanity/sanity-code";
 export const components: PortableTextComponents = {
     types: {
         image: PortableImage,
-        code: SanityCode
+        code: SanityCode,
     },
     block: {
-        h1: ({ children }) => <h1 className="text-2xl">{children}</h1>
+        h1: ({ children }) => <h1 className="text-2xl">{children}</h1>,        
     }
 };

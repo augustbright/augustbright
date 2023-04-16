@@ -25,3 +25,7 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+article > p {
+  margin: 0 0 1rem;
+}

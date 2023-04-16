@@ -10,11 +10,9 @@ type TProps = {
 };
 
 export const PostPreview = ({ post }: TProps) => {
-    const urlTitle = encodeURIComponent(post.title.toLowerCase().replace(/\s/g, '-'));
-
     return (
-        <Link href={`/post/${urlTitle}_${post._id}`}>
-            <article className="border max-w-2xl p-4 rounded-md border-teal-600 hover:border-teal-300 transition duration-200 ease-in-out">
+        <Link href={`/post/${post.slug.current}`}>
+            <article className="border border-dotted max-w-2xl p-4 rounded-md border-gray-500 hover:border-gray-50">
                 {post.cover && <SanityImage image={post.cover} />}
                 <header className="my-4">
                     <h1 className="text-2xl text-yellow-300 font-semibold">{post.title}</h1>

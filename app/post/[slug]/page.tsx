@@ -4,13 +4,13 @@ import { SanityImage } from "@/app/components/sanity/sanity-image";
 import { client } from "@/lib/sanilty";
 import { PortableText } from "@portabletext/react";
 import moment from "moment";
+import { Comments } from '@/app/components/comments';
 
 type TProps = {
-    params: { slug: `${string}_${string}` };
+    params: { slug: string; };
 };
 export default async function Post({ params }: TProps) {
-    const postId = params.slug.split("_")[1];
-    const [post] = await client.fetch<Array<TPost>>(`*[_type == "post" && _id == "${postId}"]`)
+    const [post] = await client.fetch<Array<TPost>>(`*[_type == "post" && slug.current == "${params.slug}"]`)
     return (
         <main className="">
             <article className="max-w-3xl">
@@ -29,6 +29,9 @@ export default async function Post({ params }: TProps) {
                     components={components}
                 />
             </article>
+            <div className="mt-16">
+                <Comments />
+            </div>
         </main>
     );
 }

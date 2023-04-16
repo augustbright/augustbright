@@ -1,5 +1,6 @@
 import { PortableTextProps } from '@portabletext/react';
 import { SanityImageAssetDocument } from '@sanity/client';
+import { Slug } from '@sanity/types';
 import Opaque from 'ts-opaque';
 
 type TSanityId = Opaque<string, 'SanityId'>;
@@ -18,6 +19,7 @@ type TPostContent = PortableTextProps["value"];
 
 export type TPost = TSanityEntity<{
     "intro": TPostContent,
+    "slug": Slug,
     "content": TPostContent,
     "title": string,
     "cover": SanityImageAssetDocument
