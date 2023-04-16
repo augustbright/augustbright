@@ -1,7 +1,14 @@
-export default function Home() {
+import { TPost } from "@/api/types";
+import { client } from "@/lib/sanilty";
+import { PostPreview } from "./components/post-preview";
+
+export default async function Home() {
+  const posts = await client.fetch<Array<TPost>>(`*[_type == "post"]`);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className="text-6xl font-bold">August Bright</h1>
+    <main className="overscroll-none">
+      {posts.map((post) => (
+        <PostPreview key={post._id} post={post} />
+      ))}
     </main>
   )
 }

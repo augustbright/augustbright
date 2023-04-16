@@ -1,4 +1,6 @@
+import { SiteHeader } from './components/site-header'
 import './globals.css'
+import './prism.css'
 
 export const metadata = {
   title: 'August Bright',
@@ -12,7 +14,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="overscroll-none">
+        <SiteHeader />
+        <div className="container mx-auto flex flex-col items-center p-8">
+          {children}
+        </div>
+      </body>
     </html>
   )
 }
