@@ -13,7 +13,7 @@ export default async function Post({ params }: TProps) {
     const [post] = await client.fetch<Array<TPost>>(`*[_type == "post" && slug.current == "${params.slug}"]`)
     return (
         <main className="">
-            <article className="max-w-3xl">
+            <article className="max-w-3xl mx-auto">
                 {post.cover && <SanityImage image={post.cover} />}
                 <header className="my-4">
                     <h1 className="text-2xl text-yellow-300 font-semibold">{post.title}</h1>

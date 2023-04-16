@@ -16,7 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="overscroll-none">
         <SiteHeader />
-        <div className="container mx-auto flex flex-col items-center p-8">
+        <div className="container mx-auto p-8">
           {children}
         </div>
       </body>
