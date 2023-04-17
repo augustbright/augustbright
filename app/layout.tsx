@@ -14,11 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="overscroll-none">
+      <body className="overscroll-none min-h-screen flex flex-col">
         <SiteHeader />
-        <div className="container mx-auto p-8">
-          {children}
-        </div>
+        {children}
       </body>
     </html>
   )

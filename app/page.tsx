@@ -7,11 +7,13 @@ export default async function Home() {
   const posts = await client.fetch<Array<TPost>>(`*[_type == "post"]`);
   return (
     <main className="overscroll-none">
-      <MainIntro />
-      <div className="flex flex-col items-center">
-        {posts.map((post) => (
-          <PostPreview key={post._id} post={post} />
-        ))}
+      <div className="container mx-auto p-8">
+        <MainIntro />
+        <div className="flex flex-col items-center">
+          {posts.map((post) => (
+            <PostPreview key={post._id} post={post} />
+          ))}
+        </div>
       </div>
     </main>
   )

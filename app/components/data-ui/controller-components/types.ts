@@ -1,0 +1,1 @@
+export type ControllerComponent<Data> = React.ComponentType<{ onSubmit: (data: Data) => void }>;
